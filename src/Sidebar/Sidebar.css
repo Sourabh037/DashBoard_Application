@@ -1,0 +1,92 @@
+/* Hamburger button */
+.menu-button {
+  width: 36px;
+  height: 36px;
+
+  position: fixed;
+  top: 25px;
+  left: 16px;
+
+  background: transparent;
+  border: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-button span {
+  width: 20px;
+  height: 3px;
+
+  background-color: #000;
+  border-radius: 2px;
+
+  transition: transform 0.3s ease;
+}
+
+/* Hamburger → X */
+.menu-button.open span:first-child {
+  transform: translateY(4.5px) rotate(45deg);
+}
+
+.menu-button.open span:last-child {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+
+/* Modern floating sidebar */
+.sidebar {
+  box-sizing: border-box;
+
+  width: 225px;
+  height: calc(100vh - 56px);
+
+  position: fixed;
+  top: 28px;
+  left: 9px;
+
+  background-color: #c8d9e6;
+  border: 2px solid #9db2bf;
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  transform: translateX(calc(-100% - 40px));
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+  z-index: 1000;
+
+  padding: 70px 12px 20px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Open sidebar */
+.sidebar.sidebar-open {
+  transform: translateX(0);
+}
+
+/* Image section below navigation */
+.sidebar-image-wrapper {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-image {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  height: 150px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 12px;
+}

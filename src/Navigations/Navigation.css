@@ -1,0 +1,31 @@
+Shared animation for all navigation buttons
+
+.nav-animation {
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  padding-left: 24px;
+
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Smooth movement on hover */
+.nav-animation:hover {
+  transform: translateX(6px);
+}
+
+/* Smooth press effect */
+.nav-animation:active {
+  transform: translateX(2px) scale(0.98);
+}
+
+/* Keyboard accessibility */
+.nav-animation:focus-visible {
+  outline: 2px solid #334155;
+  outline-offset: 3px;
+}
